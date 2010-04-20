@@ -1,4 +1,4 @@
-package meebo.proto;
+package doopgen.proto;
 		
 option java_outer_classname = "ElephantBirdBugProtos";
 
