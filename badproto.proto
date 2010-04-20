@@ -1,0 +1,13 @@
+package meebo.proto;
+		
+option java_outer_classname = "ElephantBirdBugProtos";
+
+message BadProto {
+  optional string id = 1;
+  repeated NestedMessage something = 2;
+}
+
+message NestedMessage {
+  optional string first_string = 1;
+  optional string second_string = 2;
+}

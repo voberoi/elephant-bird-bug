@@ -1,0 +1,27 @@
+Pig Stack Trace
+---------------
+ERROR 0: org.apache.pig.data.DefaultDataBag cannot be cast to java.util.List
+
+org.apache.pig.backend.executionengine.ExecException: ERROR 0: org.apache.pig.data.DefaultDataBag cannot be cast to java.util.List
+	at org.apache.pig.backend.local.executionengine.LocalExecutionEngine.execute(LocalExecutionEngine.java:184)
+	at org.apache.pig.PigServer.executeCompiledLogicalPlan(PigServer.java:773)
+	at org.apache.pig.PigServer.execute(PigServer.java:766)
+	at org.apache.pig.PigServer.access$100(PigServer.java:89)
+	at org.apache.pig.PigServer$Graph.execute(PigServer.java:937)
+	at org.apache.pig.PigServer.executeBatch(PigServer.java:249)
+	at org.apache.pig.tools.grunt.GruntParser.executeBatch(GruntParser.java:113)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:170)
+	at org.apache.pig.tools.grunt.GruntParser.parseStopOnError(GruntParser.java:142)
+	at org.apache.pig.tools.grunt.Grunt.exec(Grunt.java:89)
+	at org.apache.pig.Main.main(Main.java:397)
+Caused by: java.lang.ClassCastException: org.apache.pig.data.DefaultDataBag cannot be cast to java.util.List
+	at com.google.protobuf.GeneratedMessage$FieldAccessorTable$RepeatedFieldAccessor.set(GeneratedMessage.java:1140)
+	at com.google.protobuf.GeneratedMessage$Builder.setField(GeneratedMessage.java:206)
+	at com.google.protobuf.GeneratedMessage$Builder.setField(GeneratedMessage.java:147)
+	at com.twitter.elephantbird.pig.store.LzoProtobufB64LinePigStorage.putNext(Unknown Source)
+	at org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POStore.getNext(POStore.java:121)
+	at org.apache.pig.backend.local.executionengine.LocalPigLauncher.runPipeline(LocalPigLauncher.java:146)
+	at org.apache.pig.backend.local.executionengine.LocalPigLauncher.launchPig(LocalPigLauncher.java:109)
+	at org.apache.pig.backend.local.executionengine.LocalExecutionEngine.execute(LocalExecutionEngine.java:165)
+	... 10 more
+================================================================================
